@@ -78,7 +78,7 @@ window.addEventListener('scroll', () => {
     progressBar.style.transform = `scaleX(${scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0})`;
 }, { passive: true });
 
-const interactiveCards = document.querySelectorAll('.album-card, .quote-card, .song-item, .stat');
+const interactiveCards = document.querySelectorAll('.album-card, .quote-card, .stat');
 interactiveCards.forEach(card => {
     card.addEventListener('pointermove', event => {
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -164,68 +164,4 @@ albumModal.addEventListener('click', event => {
 });
 document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && !albumModal.hidden) closeModal();
-});
-
-const audio = document.querySelector('#background-audio');
-const player = document.querySelector('.music-player');
-const playerToggle = document.querySelector('#player-toggle');
-const nowPlaying = document.querySelector('#now-playing');
-let activeSong = null;
-
-const setPlayerState = (isPlaying) => {
-    player.classList.toggle('playing', isPlaying);
-    playerToggle.textContent = isPlaying ? '❚❚' : '▶';
-    playerToggle.setAttribute('aria-label', isPlaying ? 'Pozastavit' : 'Přehrát');
-};
-
-document.querySelectorAll('.song-item[data-audio]').forEach(song => {
-    song.addEventListener('click', async () => {
-        const isCurrentSong = activeSong === song;
-        if (isCurrentSong && !audio.paused) {
-            audio.pause();
-            setPlayerState(false);
-            return;
-        }
-
-        if (!isCurrentSong) {
-            activeSong?.classList.remove('is-playing');
-            activeSong = song;
-            activeSong.classList.add('is-playing');
-            audio.src = song.dataset.audio;
-            nowPlaying.textContent = song.dataset.song;
-        }
-
-        try {
-            await audio.play();
-            setPlayerState(true);
-        } catch {
-            nowPlaying.textContent = 'Přidej audio soubor do složky audio/';
-            setPlayerState(false);
-        }
-    });
-});
-
-playerToggle.addEventListener('click', async () => {
-    if (!activeSong) {
-        nowPlaying.textContent = 'Nejdřív vyber skladbu';
-        return;
-    }
-
-    if (audio.paused) {
-        try {
-            await audio.play();
-            setPlayerState(true);
-        } catch {
-            nowPlaying.textContent = 'Přidej audio soubor do složky audio/';
-            setPlayerState(false);
-        }
-    } else {
-        audio.pause();
-        setPlayerState(false);
-    }
-});
-
-audio.addEventListener('ended', () => {
-    setPlayerState(false);
-    activeSong?.classList.remove('is-playing');
 });
