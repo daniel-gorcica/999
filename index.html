@@ -4,38 +4,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#10051c">
     <title>Juice WRLD | 999 Forever</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="loader" id="page-loader" role="status" aria-label="Načítání stránky">
+        <div class="loader-noise" aria-hidden="true"></div>
+        <div class="loader-flare" aria-hidden="true"></div>
+        <div class="loader-shards" id="loader-shards" aria-hidden="true"></div>
+
+        <div class="loader-content">
+            <p class="loader-kicker">A LEGEND NEVER DIES</p>
+
+            <div class="loader-name" aria-label="Juice WRLD">
+                <span class="loader-word" data-text="JUICE">JUICE</span>
+                <span class="loader-word loader-word-bottom" data-text="WRLD">WRLD</span>
+            </div>
+
+            <div class="loader-bottom">
+                <span id="loader-status">PŘIPRAVUJI STRÁNKU</span>
+                <span class="loader-percent" id="loader-percent">00%</span>
+            </div>
+
+            <div class="loader-progress">
+                <span id="loader-progress-bar"></span>
+            </div>
+        </div>
+    </div>
+    <div class="poster-background" aria-hidden="true">
+        <div class="poster-glow poster-glow-one"></div>
+        <div class="poster-glow poster-glow-two"></div>
+        <span class="poster-number poster-number-one">999</span>
+        <span class="poster-number poster-number-two">REAL MUSIC</span>
+        <img class="poster-carton carton-one" src="juice.png" alt="">
+        <img class="poster-carton carton-two" src="juice.png" alt="">
+        <span class="poster-sticker sticker-one">100%<br>REAL</span>
+        <span class="poster-sticker sticker-two">FOREVER<br>999</span>
+        <div class="poster-particles" id="poster-particles"></div>
+    </div>
 
     <div class="scroll-progress" aria-hidden="true"></div>
+
     <nav class="site-nav" aria-label="Hlavní navigace">
-        <a class="brand" href="#top"><span>999</span> FOREVER</a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+        <a class="brand" href="#top">
+            <img src="favicon.png" alt="999 Juice WRLD logo">
+            <span>FOREVER</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+            Menu
+        </button>
         <div class="nav-links" id="nav-links">
             <a href="#o-nem">Příběh</a>
             <a href="#diskografie">Alba</a>
+            <a href="#skladby">Skladby</a>
             <a href="#odkaz">Odkaz</a>
         </div>
     </nav>
 
-    <!-- HERO SEKCE -->
     <header class="hero" id="top">
         <div class="hero-content fade-in">
             <p class="eyebrow"><span></span> LEGENDS NEVER DIE</p>
-            <div class="badge-999" aria-label="Symbol 999">999</div>
+            <div class="badge-999">999</div>
             <h1>JUICE<br>WRLD</h1>
-            <p class="desc">Legenda emo rapu. Hlas generace, která se v jeho textech našla. Navždy v našich srdcích.</p>
+            <p class="desc">
+                Legenda emo rapu. Hlas generace, která se v jeho textech našla.
+                Navždy v našich srdcích.
+            </p>
             <div class="hero-actions">
                 <a href="#diskografie" class="btn">Prozkoumat tvorbu <span>↓</span></a>
                 <a href="#o-nem" class="text-link">Jeho příběh <span>↗</span></a>
             </div>
         </div>
+
         <div class="hero-image fade-in">
             <img src="juice.png" alt="Juice WRLD">
-            <div class="hero-stamp">999<br><small>FOREVER</small></div>
+            <span class="hero-stamp">999<br><small>FOREVER</small></span>
         </div>
     </header>
 
@@ -47,85 +93,183 @@
             <div class="stat"><strong>∞</strong><span>vliv na fanoušky</span></div>
         </section>
 
-        <!-- KDO TO BYL -->
         <section id="o-nem" class="section fade-in">
             <div class="card bio-card">
                 <div>
                     <p class="eyebrow">01 / PŘÍBĚH</p>
                     <h2 class="section-title">Kdo to byl</h2>
                 </div>
-                <p>Jarad Anthony Higgins (2. 12. 1998 – 8. 12. 2019) z Chicaga. Stal se jednou z nejvýraznějších tváří
-                    emo rapu. Míchal hip-hop s melodiemi a kytarami a v textech byl otevřený o bolesti, vztazích i
-                    závislostech. Jeho hudba pomohla milionům fanoušků po celém světě cítit se méně sami.</p>
-                <div class="bio-tags"><span>Chicago, IL</span><span>Emo rap</span><span>999 mindset</span></div>
+                <p>
+                    Jarad Anthony Higgins (2. 12. 1998 – 8. 12. 2019) z Chicaga.
+                    Stal se jednou z nejvýraznějších tváří emo rapu. Míchal hip-hop
+                    s melodiemi a kytarami a v textech byl otevřený o bolesti,
+                    vztazích i závislostech. Jeho hudba pomohla fanouškům po celém
+                    světě cítit se méně sami.
+                </p>
+                <div class="bio-tags">
+                    <span>Chicago, IL</span>
+                    <span>Emo rap</span>
+                    <span>999 mindset</span>
+                </div>
             </div>
         </section>
 
         <section class="section timeline-section fade-in">
             <p class="eyebrow text-center">02 / CESTA</p>
-            <h2 class="section-title text-center">Krátká timeline</h2>
+            <h2 class="section-title text-center">Krátká časová osa</h2>
             <div class="timeline">
-                <article class="timeline-item"><span>2015</span>
+                <article class="timeline-item">
+                    <span>2015</span>
                     <div>
                         <h3>Začátek</h3>
                         <p>První skladby a freestyle videa z Chicaga.</p>
                     </div>
                 </article>
-                <article class="timeline-item"><span>2018</span>
+                <article class="timeline-item">
+                    <span>2018</span>
                     <div>
                         <h3>Lucid Dreams</h3>
-                        <p>Debutové album Goodbye &amp; Good Riddance mění jeho život.</p>
+                        <p>
+                            Singl „Lucid Dreams“ se stává průlomovým hitem;
+                            album <em>Goodbye &amp; Good Riddance</em> vychází v květnu.
+                        </p>
                     </div>
                 </article>
-                <article class="timeline-item"><span>2019</span>
+                <article class="timeline-item">
+                    <span>2019</span>
                     <div>
                         <h3>Death Race</h3>
-                        <p>Album Death Race for Love debutuje na prvním místě.</p>
+                        <p>Album <em>Death Race for Love</em> debutuje na prvním místě.</p>
                     </div>
                 </article>
-                <article class="timeline-item"><span>2020+</span>
+                <article class="timeline-item">
+                    <span>2020+</span>
                     <div>
                         <h3>Odkaz pokračuje</h3>
-                        <p>Jeho hudba dál spojuje miliony lidí po celém světě.</p>
+                        <p>Jeho hudba dál spojuje fanoušky po celém světě.</p>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- DISKOGRAFIE -->
         <section id="diskografie" class="section fade-in">
             <p class="eyebrow text-center">03 / HUDBA</p>
             <h2 class="section-title text-center">Diskografie</h2>
             <div class="grid">
-                <article class="card album-card album-goodbye" tabindex="0" role="button" data-album="goodbye"><div class="album-cover"><img src="albums/goodbye-and-good-riddance.jpg" data-fallback="juice.png" alt="Goodbye &amp; Good Riddance"></div><span class="album-index">01</span>
+                <article class="card album-card" tabindex="0" role="button" data-album="goodbye">
+                    <div class="album-cover">
+                        <img src="albums/goodbye-and-good-riddance.jpg" data-fallback="juice.png"
+                            alt="Goodbye &amp; Good Riddance">
+                    </div>
+                    <span class="album-index">01</span>
                     <div class="album-year">2018</div>
                     <h3>Goodbye &amp; Good Riddance</h3>
                     <p>Debutové album</p><span class="album-arrow">↗</span>
                 </article>
-                <article class="card album-card album-death-race" tabindex="0" role="button" data-album="death-race"><div class="album-cover"><img src="albums/death-race-for-love.jpg" data-fallback="juice.png" alt="Death Race for Love"></div><span class="album-index">02</span>
+
+                <article class="card album-card" tabindex="0" role="button" data-album="death-race">
+                    <div class="album-cover">
+                        <img src="albums/death-race-for-love.jpg" data-fallback="juice.png" alt="Death Race for Love">
+                    </div>
+                    <span class="album-index">02</span>
                     <div class="album-year">2019</div>
                     <h3>Death Race for Love</h3>
-                    <p>Album č. 1</p><span class="album-arrow">↗</span>
+                    <p>Druhé studiové album</p><span class="album-arrow">↗</span>
                 </article>
-                <article class="card album-card album-legends" tabindex="0" role="button" data-album="legends"><div class="album-cover"><img src="albums/legends-never-die.jpg" data-fallback="juice.png" alt="Legends Never Die"></div><span class="album-index">03</span>
+
+                <article class="card album-card" tabindex="0" role="button" data-album="legends">
+                    <div class="album-cover">
+                        <img src="albums/legends-never-die.jpg" data-fallback="juice.png" alt="Legends Never Die">
+                    </div>
+                    <span class="album-index">03</span>
                     <div class="album-year">2020</div>
                     <h3>Legends Never Die</h3>
                     <p>Posmrtné album</p><span class="album-arrow">↗</span>
                 </article>
-                <article class="card album-card album-demons" tabindex="0" role="button" data-album="demons"><div class="album-cover"><img src="albums/fighting-demons.jpg" data-fallback="juice.png" alt="Fighting Demons"></div><span class="album-index">04</span>
+
+                <article class="card album-card" tabindex="0" role="button" data-album="demons">
+                    <div class="album-cover">
+                        <img src="albums/fighting-demons.jpg" data-fallback="juice.png" alt="Fighting Demons">
+                    </div>
+                    <span class="album-index">04</span>
                     <div class="album-year">2021</div>
                     <h3>Fighting Demons</h3>
-                    <p>Vzpomínky a emoce</p><span class="album-arrow">↗</span>
+                    <p>Posmrtné album</p><span class="album-arrow">↗</span>
                 </article>
-                <article class="card album-card album-party" tabindex="0" role="button" data-album="party"><div class="album-cover"><img src="albums/the-party-never-ends.png" data-fallback="juice.png" alt="The Party Never Ends"></div><span class="album-index">05</span>
+
+                <article class="card album-card" tabindex="0" role="button" data-album="party">
+                    <div class="album-cover">
+                        <img src="albums/the-party-never-ends.png" data-fallback="juice.png" alt="The Party Never Ends">
+                    </div>
+                    <span class="album-index">05</span>
                     <div class="album-year">2024</div>
                     <h3>The Party Never Ends</h3>
-                    <p>Nová kapitola</p><span class="album-arrow">↗</span>
+                    <p>Páté studiové album</p><span class="album-arrow">↗</span>
                 </article>
             </div>
         </section>
 
-        <!-- CITÁTY -->
+        <section id="skladby" class="section fade-in">
+            <p class="eyebrow text-center">04 / TOP TRACKS</p>
+            <h2 class="section-title text-center">Nejlepší skladby</h2>
+            <div class="songs-grid">
+                <article class="song-card">
+                    <span class="song-number">01</span>
+                    <div>
+                        <h3>Lucid Dreams</h3>
+                        <p>Melancholická hymna o bolesti po rozchodu a vzpomínkách, kterých se nejde zbavit.</p>
+                        <a class="song-link" href="https://open.spotify.com/search/Juice%20WRLD%20Lucid%20Dreams"
+                            target="_blank" rel="noopener noreferrer">Spotify ↗</a>
+                    </div>
+                </article>
+                <article class="song-card">
+                    <span class="song-number">02</span>
+                    <div>
+                        <h3>All Girls Are the Same</h3>
+                        <p>Upřímná skladba o zklamání, nedůvěře a hledání někoho, komu se dá věřit.</p>
+                        <a class="song-link" href="https://open.spotify.com/search/Juice%20WRLD%20All%20Girls%20Are%20the%20Same"
+                            target="_blank" rel="noopener noreferrer">Spotify ↗</a>
+                    </div>
+                </article>
+                <article class="song-card">
+                    <span class="song-number">03</span>
+                    <div>
+                        <h3>Robbery</h3>
+                        <p>Výrazný singl o lásce, ztrátě a vnitřním chaosu s jedním z jeho nejsilnějších refrénů.</p>
+                        <a class="song-link" href="https://open.spotify.com/search/Juice%20WRLD%20Robbery"
+                            target="_blank" rel="noopener noreferrer">Spotify ↗</a>
+                    </div>
+                </article>
+                <article class="song-card">
+                    <span class="song-number">04</span>
+                    <div>
+                        <h3>Wishing Well</h3>
+                        <p>Silný pohled na osobní démony, tlak okolí a touhu najít konečně trochu klidu.</p>
+                        <a class="song-link" href="https://open.spotify.com/search/Juice%20WRLD%20Wishing%20Well"
+                            target="_blank" rel="noopener noreferrer">Spotify ↗</a>
+                    </div>
+                </article>
+                <article class="song-card">
+                    <span class="song-number">05</span>
+                    <div>
+                        <h3>Legends</h3>
+                        <p>Emotivní pocta přátelství, odkazu a lidem, kteří zanechali nesmazatelnou stopu.</p>
+                        <a class="song-link" href="https://open.spotify.com/search/Juice%20WRLD%20Legends"
+                            target="_blank" rel="noopener noreferrer">Spotify ↗</a>
+                    </div>
+                </article>
+                <article class="song-card">
+                    <span class="song-number">06</span>
+                    <div>
+                        <h3>Empty Out Your Pockets</h3>
+                        <p>Energická skladba s výrazným tempem a sebevědomým Juiceovým rapovým projevem.</p>
+                        <a class="song-link" href="https://open.spotify.com/search/Juice%20WRLD%20Empty%20Out%20Your%20Pockets"
+                            target="_blank" rel="noopener noreferrer">Spotify ↗</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
         <section id="citaty" class="section fade-in">
             <p class="eyebrow text-center">05 / WORDS</p>
             <h2 class="section-title text-center">Nezapomenutelné citáty</h2>
@@ -142,24 +286,38 @@
             </div>
         </section>
 
-        <!-- ODKAZ -->
         <section id="odkaz" class="section fade-in">
             <div class="card text-center live-free-card">
                 <p class="eyebrow">06 / LEGACY</p>
                 <h2 class="section-title">Odkaz</h2>
-                <p>Juice WRLD pomáhal lidem cítit se méně sami. Jeho máma založila nadaci <strong>Live Free
-                        999</strong>, která podporuje duševní zdraví a prevenci závislostí.</p>
-                <a class="btn btn-small" href="https://livefree999.org/" target="_blank" rel="noopener noreferrer">Live
-                    Free 999 ↗</a>
+                <p>
+                    Juice WRLD pomáhal lidem cítit se méně sami. Jeho máma založila
+                    nadaci <strong>Live Free 999</strong>, která podporuje duševní
+                    zdraví a prevenci závislostí.
+                </p>
+                <a class="btn btn-small" href="https://livefree999.org/" target="_blank" rel="noopener noreferrer">
+                    Live Free 999 ↗
+                </a>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
-        <p>1998 – 2019 / 999 forever</p>
+        <p class="footer-title">1998 – 2019 / 999 FOREVER</p>
         <p class="disclaimer">Fanouškovský projekt. Není oficiální stránkou Juice WRLD.</p>
+        <div class="footer-links" aria-label="Odkazy projektu">
+            <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fraw.githubusercontent.com%2Fdaniel-gorcica%2F999%2Fmain%2Findex.html"
+                target="_blank" rel="noopener noreferrer">Validace HTML</a>
+            <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fraw.githubusercontent.com%2Fdaniel-gorcica%2F999%2Fmain%2Fstyle.css"
+                target="_blank" rel="noopener noreferrer">Validace CSS</a>
+            <a href="https://github.com/daniel-gorcica/999/blob/main/AI-Citace.md"
+                target="_blank" rel="noopener noreferrer">AI citace</a>
+            <a href="https://github.com/daniel-gorcica/999"
+                target="_blank" rel="noopener noreferrer">GitHub projektu</a>
+        </div>
     </footer>
+
+    <div class="custom-cursor" aria-hidden="true"></div>
 
     <div class="album-modal" id="album-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
         <div class="album-modal-card">
