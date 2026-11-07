@@ -73,6 +73,13 @@ Níže jsou shrnutá zadání, která vedla k jednotlivým úpravám:
     - Tento dokument byl rozšířen o konkrétní zadání autora a přehled provedených
       změn v HTML, CSS a JavaScriptu.
 
+14. **Validace HTML a CSS**
+     - Byly opraveny odkazy na validátory, aby kontrolovaly skutečnou stránku
+       na GitHub Pages a načítaly CSS se správným MIME typem.
+     - Byly opraveny chyby přístupnosti a validity HTML, například neplatné role
+       u karet alb, použití `aria-label` a prázdný nadpis modálního okna.
+     - Opraveny byly také koncové české uvozovky v sekci citátů.
+
 ## Přehled provedených změn
 
 - Přidán favicon z dodaného loga a optimalizována jeho velikost i ořez.
@@ -88,6 +95,8 @@ Níže jsou shrnutá zadání, která vedla k jednotlivým úpravám:
 - Vylepšeno záhlaví s logem z faviconu a zápatí s plakátovými odkazy.
 - Přidány odkazy na HTML/CSS validaci, GitHub a tento dokument.
 - Opraveny chyby v CSS a vrstvení modálního okna.
+- Opraveny odkazy na validátory a chyby validity HTML.
+- Opraveny uvozovky v citátech.
 
 ## Použité zdroje a materiály
 
